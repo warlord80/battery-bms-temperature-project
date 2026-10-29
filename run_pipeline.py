@@ -48,10 +48,14 @@ def main():
     # 6. Master Visual Compilation
     run_step("6. Publication Figures Compilation", [sys.executable, "scripts/05_make_figures.py"])
 
+    # 7. Academic PDF Compilation with KaTeX Math
+    run_step("7. Academic PDF Reports Compilation", ["node", "scripts/compile_report.js"])
+
     print("\n" + "="*80)
     print("RESEARCH PIPELINE COMPLETED SUCCESSFULLY!")
     print("All tables saved in: results/tables/")
     print("All figures saved in: results/figures/")
+    print("All PDFs compiled in: report/")
     print("="*80)
 
 if __name__ == "__main__":

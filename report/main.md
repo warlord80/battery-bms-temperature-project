@@ -24,7 +24,7 @@ Lithium-ion energy storage systems represent the foundation of modern electrifie
 In commercial applications, open-loop current integration (Coulomb counting) serves as the traditional baseline due to its computational simplicity. However, Coulomb counting suffers from fundamental vulnerabilities:
 1. Susceptibility to unmodeled initial state offsets ($\hat{z}_0 \neq z_0$);
 2. Systematic drift driven by current sensor measurement bias and precision noise;
-3. Divergence when true cell capacity fades due to cycling or aging ($Q_{\max} < Q_{\nom}$), while the estimator relies on the factory nameplate rating ($Q_{\nom}$).
+3. Divergence when true cell capacity fades due to cycling or aging ($Q_{\max} < Q_{\text{nom}}$), while the estimator relies on the factory nameplate rating ($Q_{\text{nom}}$).
 
 These challenges are exacerbated in harsh environmental operating conditions, particularly elevated ambient temperatures ($35\,^\circ\text{C}$ to $45\,^\circ\text{C}$). Thermal excitation enhances solid-state diffusion and reaction kinetics (reducing internal resistance via Arrhenius relationships), but simultaneously accelerates chemical degradation mechanisms such as solid electrolyte interphase (SEI) growth, transition metal dissolution, and irreversible lithium inventory loss (Mattia et al. 2025; Sun et al. 2026).
 
@@ -61,7 +61,7 @@ Throughout this study, we adhere strictly to the discharge-positive sign convent
 
 The physical battery cell state vector is defined as:
 $$\mathbf{x}_{\text{phys}} = \begin{bmatrix} z & v_p & T & Q_{\max} & \text{SOH} & N_{\text{eq}} \end{bmatrix}^T$$
-where $z \in [0, 1]$ represents the true SOC fraction, $v_p$ (V) is the polarization voltage across the RC branch, $T$ (K) is the lumped core temperature, $Q_{\max}$ (Ah) is the available capacity, $\text{SOH} = Q_{\max} / Q_{\nom}$ is the state of health, and $N_{\text{eq}}$ is the accumulated equivalent full cycle count.
+where $z \in [0, 1]$ represents the true SOC fraction, $v_p$ (V) is the polarization voltage across the RC branch, $T$ (K) is the lumped core temperature, $Q_{\max}$ (Ah) is the available capacity, $\text{SOH} = Q_{\max} / Q_{\text{nom}}$ is the state of health, and $N_{\text{eq}}$ is the accumulated equivalent full cycle count.
 
 ### 3.2 Electrical Dynamics (1-RC Thévenin Model)
 
@@ -101,8 +101,8 @@ To ensure physical realism given the intentional omission of reversible entropic
 ### 3.6 State Estimation Algorithms
 
 #### 3.6.1 Baseline: Nominal Coulomb Counting
-The baseline Coulomb counter integrates measured current $I_{\text{meas}}$ assuming factory nominal capacity $Q_{\nom} = 3.20\,\text{Ah}$:
-$$\hat{z}_{\text{cc}}(k+1) = \hat{z}_{\text{cc}}(k) - \frac{\eta I_{\text{meas}}(k) \Delta t}{3600 Q_{\nom}}$$
+The baseline Coulomb counter integrates measured current $I_{\text{meas}}$ assuming factory nominal capacity $Q_{\text{nom}} = 3.20\,\text{Ah}$:
+$$\hat{z}_{\text{cc}}(k+1) = \hat{z}_{\text{cc}}(k) - \frac{\eta I_{\text{meas}}(k) \Delta t}{3600 Q_{\text{nom}}}$$
 where $I_{\text{meas}}(k) = I_{\text{true}}(k) + I_{\text{bias}} + w_i(k)$, with $w_i \sim \mathcal{N}(0, \sigma_i^2)$.
 
 #### 3.6.2 Observer: Extended Kalman Filter (EKF)
