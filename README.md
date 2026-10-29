@@ -3,6 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-brightgreen.svg)](https://www.python.org/)
 [![Tests: Passing](https://img.shields.io/badge/Tests-9%2F9%20Passing-success.svg)](tests/)
+[![Report: PDF](https://img.shields.io/badge/Report-PDF%20(2.3MB)-red.svg)](report/main.pdf)
+[![Summary: 1--Page%20PDF](https://img.shields.io/badge/Summary-1--Page%20PDF-orange.svg)](report/professor_outreach_summary.pdf)
 
 An independent computational research repository investigating electrothermal dynamics, degradation surrogates, and state-of-charge (SOC) estimation fidelity in lithium-ion battery management systems (BMS).
 
