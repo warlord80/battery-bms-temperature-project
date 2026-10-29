@@ -1,0 +1,44 @@
+# Baseline Simulation Configuration
+experiment:
+  name: "baseline_25C_SOH100"
+  random_seed: 42
+
+time:
+  dt: 1.0          # Time step in seconds
+  dt_fine: 0.5     # Fine time step for convergence check
+
+cell:
+  chemistry: "NCA_Graphite_Panasonic_NCR18650B"
+  Qnom: 3.20       # Nominal capacity in Ah
+  Tref: 298.15     # Reference temperature in Kelvin (25 C)
+  Rg: 8.314        # Universal gas constant J/(mol*K)
+  V_min: 2.50      # Lower cutoff voltage in V
+  V_max: 4.20      # Upper cutoff voltage in V
+  eta: 1.00        # Coulombic efficiency for discharge
+
+electrical:
+  R0_ref: 0.042    # Ohmic resistance at Tref (Ohm)
+  R1_ref: 0.025    # Polarization resistance at Tref (Ohm)
+  C1: 2400.0       # Polarization capacitance (Farads)
+  Ea_0: 22000.0    # Activation energy for R0 (J/mol)
+  Ea_1: 20000.0    # Activation energy for R1 (J/mol)
+  alpha_0: 0.80    # Degradation scaling factor for R0
+  alpha_1: 0.50    # Degradation scaling factor for R1
+
+thermal:
+  Cth: 42.0        # Lumped thermal mass J/K
+  hA: 0.050        # Heat dissipation factor W/K
+  Tamb: 298.15     # Ambient temperature in Kelvin (25 C)
+
+initial_conditions:
+  true_soc: 0.80   # Ground truth initial SOC
+  est_soc: 0.65    # Estimator initial guess
+  true_vp: 0.0     # Ground truth initial polarization voltage (V)
+  est_vp: 0.0      # Estimator initial polarization voltage (V)
+  T_init: 298.15   # Initial cell temperature (K)
+  soh: 1.00        # State of health (Qmax / Qnom)
+
+sensor_noise:
+  sigma_v: 0.005   # Voltage measurement standard deviation (V)
+  sigma_i: 0.020   # Current measurement standard deviation (A)
+  i_bias: 0.0      # Current measurement systematic bias (A)

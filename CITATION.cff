@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or reference this simulation study, please cite it as below."
+authors:
+  - family-names: "Research Project"
+    given-names: "Computational Battery Lab"
+title: "Physics-informed estimation of lithium-ion battery state of charge and degradation under elevated ambient temperatures"
+version: 1.0.0
+date-released: 2026-10-29
+url: "https://github.com/battery-bms-temperature-project"
+abstract: >-
+  This computational study develops a reduced-order electrothermal and
+  aging-aware equivalent-circuit model for controlled sensitivity analysis of
+  lithium-ion battery state-of-charge estimation under elevated ambient
+  temperatures and capacity degradation.
+keywords:
+  - lithium-ion battery
+  - state of charge
+  - equivalent circuit model
+  - extended kalman filter
+  - battery thermal modeling
+  - electrothermal simulation
+license: MIT

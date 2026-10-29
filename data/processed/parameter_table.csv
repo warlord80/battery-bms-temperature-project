@@ -1,0 +1,22 @@
+parameter,symbol,value_or_function,units,temperature_soc_range,source_or_assumption,model_role
+Nominal Capacity,Qnom,3.2,Ah,25 C,Sourced (Barletta et al. 2022),Baseline capacity rating
+Reference Temperature,Tref,298.15,K,25 C,Sourced (Barletta et al. 2022),Thermal scaling reference
+Gas Constant,Rg,8.314,J/(mol*K),universal,Physical Constant,Arrhenius thermal scaling
+Ohmic Resistance Reference,R0_ref,0.042,Ohm,25 C / z in [0.1 0.9],Sourced (Barletta et al. 2022),Instantaneous voltage drop
+Polarization Resistance Reference,R1_ref,0.025,Ohm,25 C / z in [0.1 0.9],Sourced (Barletta et al. 2022),RC transient charge transfer
+Polarization Capacitance,C1,2400.0,F,constant,Sourced (Barletta et al. 2022),RC transient time constant (tau = 60s)
+OCV-SOC Function,OCV(z),Monotonic Spline Lookup,V,z in [0 1],Sourced (Barletta et al. 2022),Open circuit voltage equilibrium
+Activation Energy Ohmic,Ea_0,22000.0,J/mol,T in [25 45] C,Sourced (Mehta & Gupta 2024),Arrhenius activation energy for R0
+Activation Energy Polarization,Ea_1,20000.0,J/mol,T in [25 45] C,Sourced (Mehta & Gupta 2024),Arrhenius activation energy for R1
+Resistance Aging Factor,alpha_0,0.80,dimensionless,SOH in [0.8 1.0],Assumed (Sensitivity Tested),Degradation scaling on R0 (16% rise at SOH=0.8)
+Polarization Aging Factor,alpha_1,0.50,dimensionless,SOH in [0.8 1.0],Assumed (Sensitivity Tested),Degradation scaling on R1 (10% rise at SOH=0.8)
+Lumped Heat Capacity,Cth,42.0,J/K,m=45g cp=933J/(kg*K),Sourced (Mattia et al. 2025),Lumped cell thermal mass
+Convective Dissipation,hA,0.050,W/K,Natural convection,Sourced (Mattia et al. 2025),Cooling rate to ambient air
+Coulombic Efficiency,eta,1.0,dimensionless,Discharge regime,Sourced (Barletta et al. 2022),Charge conservation integration factor
+Voltage Sensor Noise Std,sigma_v,0.005,V,Gaussian white noise,Sourced (Sun et al. 2026),Synthetic measurement noise std
+Current Sensor Noise Std,sigma_i,0.020,A,Gaussian white noise,Sourced (Sun et al. 2026),Synthetic current noise std
+EKF Initial Covariance z,P0_z,0.01,dimensionless^2,Initial state uncertainty,Assumed (Sensitivity Tested),Prior SOC covariance
+EKF Initial Covariance vp,P0_vp,0.0001,V^2,Initial state uncertainty,Assumed (Sensitivity Tested),Prior vp covariance
+EKF Process Noise z,Q_z,1.0e-6,dimensionless^2,Tuned filter stability,Assumed (Sensitivity Tested),Process noise covariance on SOC
+EKF Process Noise vp,Q_vp,1.0e-5,V^2,Tuned filter stability,Assumed (Sensitivity Tested),Process noise covariance on vp
+EKF Measurement Noise,R_cov,2.5e-5,V^2,Matches sigma_v^2,Sourced (Sun et al. 2026),Measurement noise covariance

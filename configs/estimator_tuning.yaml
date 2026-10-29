@@ -1,0 +1,24 @@
+# Extended Kalman Filter Tuning and Prior Covariance
+ekf:
+  state_dimension: 2  # [z, vp]^T
+  measurement_dimension: 1 # [Vt]
+
+  initial_covariance:
+    P0_z: 0.010       # Variance on initial SOC (std = 0.10)
+    P0_vp: 0.0001     # Variance on initial vp (std = 0.01 V)
+
+  process_noise_covariance:
+    Q_z: 1.0e-6       # Process variance on SOC integration
+    Q_vp: 1.0e-5      # Process variance on polarization voltage
+
+  measurement_noise_covariance:
+    R: 2.5e-5         # Measurement variance (std = 0.005 V, std^2 = 2.5e-5)
+
+  bounds:
+    soc_min: 0.0
+    soc_max: 1.0
+    vp_min: -0.50
+    vp_max: 0.50
+
+coulomb_counting:
+  assumed_capacity: "Qnom"  # 3.20 Ah

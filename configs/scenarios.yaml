@@ -1,0 +1,31 @@
+# Scenario Matrix & Robustness Configuration
+
+core_matrix:
+  temperatures_c: [25.0, 35.0, 45.0]
+  temperatures_k: [298.15, 308.15, 318.15]
+  soh_levels: [1.00, 0.90, 0.80]
+  loads: ["steady_moderate", "dynamic_pulse"]
+  estimators: ["coulomb_counting", "ekf"]
+
+load_profiles:
+  steady_moderate:
+    type: "constant"
+    current_a: 1.60     # 0.5C discharge (1.6 A)
+    duration_s: 3600    # 1 hour
+  dynamic_pulse:
+    type: "pulse"
+    duration_s: 3600    # 1 hour
+    segment_definition:
+      - {current_a: 1.6, duration_s: 300}   # 0.5C pulse
+      - {current_a: 0.0, duration_s: 180}   # Rest
+      - {current_a: 3.2, duration_s: 120}   # 1.0C pulse
+      - {current_a: 0.0, duration_s: 180}   # Rest
+      - {current_a: 0.8, duration_s: 420}   # 0.25C pulse
+
+robustness_study:
+  random_seeds: [42, 101, 2024, 777, 9999]
+  initial_soc_errors: [-0.20, -0.10, 0.10, 0.20] # relative to true SOC (0.80 -> 0.60, 0.70, 0.90, 1.00)
+  current_biases: [-0.016, -0.008, 0.0, 0.008, 0.016] # +/-0.5%, +/-1.0% of nominal 1.6 A
+  voltage_noise_stds: [0.002, 0.005, 0.010]           # 2 mV, 5 mV, 10 mV
+  r0_mismatches: [-0.10, 0.0, 0.10]                   # -10%, 0%, +10% mismatch in estimator R0
+  time_steps: [1.0, 0.5]                              # Convergence evaluation

@@ -1,0 +1,6 @@
+Factor,Impact_Range_Pct,Domain
+Load Profile Dynamics (Steady vs Pulse),0.15068008574602376,Operating Profile
+Ambient Temperature (25-45 °C),0.248111488496369,Environment
+Current Sensor Bias (±1%),0.5001391641213697,Instrumentation
+Capacity Fade (SOH 1.0 -> 0.8),4.772945359070956,Cell Aging
+Initial SOC Uncertainty (±20%),10.018902853931642,State Initialization

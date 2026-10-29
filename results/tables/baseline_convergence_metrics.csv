@@ -1,0 +1,8 @@
+Metric,dt = 1.0 s,dt = 0.5 s,Relative Difference [%]
+SOC RMSE Coulomb Counting [%],15.003,15.001,0.019%
+SOC RMSE EKF [%],0.343,0.609,77.480%
+Final SOC Error Coulomb Counting [%],-15.002,-14.990,0.080%
+Final SOC Error EKF [%],0.002,-1.177,53548.161%
+EKF Recovery Time (|error| <= 2%) [s],0.0,0.0,0.0 s (abs diff)
+Delivered Energy [Wh],3.868,3.868,0.003%
+Peak Cell Temperature [°C],28.15,28.15,0.006%
