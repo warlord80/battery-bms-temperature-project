@@ -17,7 +17,7 @@ The entire research pipeline—from unit verification to baseline simulations, 3
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/battery-bms-temperature-project.git
+git clone https://github.com/warlord80/battery-bms-temperature-project.git
 cd battery-bms-temperature-project
 
 # Install dependencies (or use environment.yml)
@@ -152,6 +152,6 @@ If you use or reference this codebase in your research or applications, please c
   author = {Computational Battery Lab},
   title = {Physics-informed estimation of lithium-ion battery state of charge and degradation under elevated ambient temperatures},
   year = {2026},
-  url = {https://github.com/your-username/battery-bms-temperature-project}
+  url = {https://github.com/warlord80/battery-bms-temperature-project}
 }
 ```

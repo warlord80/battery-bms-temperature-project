@@ -6,7 +6,7 @@ authors:
 title: "Physics-informed estimation of lithium-ion battery state of charge and degradation under elevated ambient temperatures"
 version: 1.0.0
 date-released: 2026-10-29
-url: "https://github.com/battery-bms-temperature-project"
+url: "https://github.com/warlord80/battery-bms-temperature-project"
 abstract: >-
   This computational study develops a reduced-order electrothermal and
   aging-aware equivalent-circuit model for controlled sensitivity analysis of
