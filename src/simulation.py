@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 from src.model import BatteryCell, CellState
 from src.estimators import CoulombCounter, ExtendedKalmanFilter
+from src.metrics import compute_estimation_metrics
 
 
 def generate_current_profile(
