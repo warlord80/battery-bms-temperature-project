@@ -27,6 +27,8 @@ pip install -r requirements.txt
 python run_pipeline.py
 ```
 
+> 💡 **Interactive Exploration:** You can also view the pre-computed interactive notebook directly on GitHub: [**`notebooks/01_interactive_exploration.ipynb`**](https://github.com/warlord80/battery-bms-temperature-project/blob/main/notebooks/01_interactive_exploration.ipynb).
+
 To run individual modular milestones:
 ```bash
 python run_tests.py              # Executes isolated 9-test unit suite
